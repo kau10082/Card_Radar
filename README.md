@@ -36,8 +36,8 @@ The less you spend, the closer it is to a pure rate comparison; the more you spe
    **Actual over rate** — rank by `min(amount × rate, cap)`.
 2. **只認你在用的支付** — 不在你支付清單裡的行動支付，其綁定加碼一律不計入。
    **Only your wallets count** — bonuses tied to mobile wallets you don't use are excluded.
-3. **誠實標狀態** — AI 抓取／新增的列一律「待驗證」，人工確認才轉「生效」；已失效不列入、即將到期會提醒。
-   **Honest status** — AI-extracted rows stay "to-verify" until you confirm; expired rows are dropped, soon-to-expire ones flagged.
+3. **誠實標狀態** — 新增／更新時有疑惑當場向你釐清，確認後直接寫「生效」；已失效不列入、即將到期會提醒。
+   **Honest status** — anything unclear is clarified with you on the spot before writing, then saved as active; expired rows are dropped, soon-to-expire ones flagged.
 
 ## 運作方式 · How it works
 
@@ -77,9 +77,8 @@ The less you spend, the closer it is to a pure rate comparison; the more you spe
 | 指令 Command | 作用 What it does |
 |---|---|
 | `/card <消費情境 scenario>` | 查最優卡 Find the best card — 例 e.g. `/card 全聯怎麼付`、`/card 高鐵票6000刷哪張` |
-| `/card 新增 <卡名 card>` | 查官方資料、新增回饋列（待驗證）Look up official terms, add reward rows (to-verify) |
-| `/card 更新 <卡名/通路>` | 重查並更新既有列 Re-check and update existing rows |
-| `/card 生效 <卡/列>` | 人工確認後翻生效 Mark verified rows as active |
+| `/card 新增 <卡名 card>` | 查官方資料、新增回饋列（有疑惑當場釐清後寫入）Look up official terms, add reward rows (clarifying anything unclear first) |
+| `/card 更新 <卡名/通路>` | 重查並更新既有列（有疑惑當場釐清）Re-check and update existing rows (clarifying anything unclear) |
 | `/card 失效 <列>` | 活動結束標已失效 Mark ended promotions as expired |
 
 ## 檔案結構 · Layout
