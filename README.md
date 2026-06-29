@@ -1,5 +1,12 @@
 # CardRadar 💳
 
+[![Claude Skill](https://img.shields.io/badge/Claude-Skill-D97757?logo=anthropic&logoColor=white)](https://claude.com/claude-code)
+[![Notion](https://img.shields.io/badge/Notion-database-000000?logo=notion&logoColor=white)](https://www.notion.so/)
+[![MCP](https://img.shields.io/badge/MCP-Notion-3b82f6)](https://modelcontextprotocol.io/)
+[![Credit-Card Rewards](https://img.shields.io/badge/credit--card-rewards-22c55e)](https://github.com/topics/credit-card-rewards)
+[![Docs](https://img.shields.io/badge/docs-繁中%20%7C%20EN-lightgrey)](#cardradar-)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > 你的個人信用卡回饋哨兵——丟一個消費情境，立刻告訴你「該刷哪張卡、實際拿多少」。
 >
 > Your personal credit-card rewards sentinel — describe a purchase, and it instantly tells you **which card to use and how much you'll actually earn**.
