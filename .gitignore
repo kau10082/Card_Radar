@@ -1,0 +1,11 @@
+# 機敏 / 個人資訊 — 絕不上傳
+*.local.json
+config.local.json
+profile.local.json
+
+# 打包後的 skill 內含本機設定，視為建置產物，不入庫
+*.skill
+
+# 一般雜項
+.DS_Store
+Thumbs.db

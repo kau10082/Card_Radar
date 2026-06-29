@@ -1,0 +1,13 @@
+{
+  "_comment": "複製本檔為 config.local.json 並填入你自己的 Notion ID。config.local.json 已被 .gitignore 排除，不會上傳。",
+  "ruleDataSourceId": "你的規則表 data source id（形如 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）",
+  "ruleDbUrl": "你的規則表 DB 連結（https://app.notion.com/p/...）",
+  "projectPageId": "你的專案頁 id（選填）",
+  "rowIndex": {
+    "_說明": "選填的 fallback 逐列索引。一張卡一個物件，內含『通路標籤: page_id』。沒有也能跑（改靠 notion-search）；填了可在 search 不靈時直接 fetch。",
+    "範例卡名": {
+      "國內一般": "該列的 page_id",
+      "海外": "該列的 page_id"
+    }
+  }
+}
