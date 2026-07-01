@@ -2,6 +2,7 @@
 *.local.json
 config.local.json
 profile.local.json
+habits.local.json
 
 # 打包後的 skill 內含本機設定，視為建置產物，不入庫
 *.skill

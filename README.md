@@ -59,11 +59,14 @@ The less you spend, the closer it is to a pure rate comparison; the more you spe
    ```bash
    cp cardradar/config.example.json  cardradar/config.local.json
    cp cardradar/profile.example.json cardradar/profile.local.json
+   cp cardradar/habits.example.json  cardradar/habits.local.json   # 選填 optional
    ```
    - `config.local.json` — 你的 Notion 規則表 `data source id`、DB 連結，以及選填的逐列 page ID 索引。
      Your Notion `data source id`, DB link, and an optional row-level page-ID index.
    - `profile.local.json` — 你的持卡資料：實際卡片、使用的行動支付與配對、會員等級／戶況、點數形式。
      Your card data: actual cards, wallets in use and their pairings, membership tier/status, point types.
+   - `habits.local.json`（選填）— 你的消費習慣：常用通路、常用支付、消費面向。留空也行——CardRadar 會在你每次查詢／更新回饋時自動學習累加，並在更新後率先依習慣產出摘要與推薦。
+     (Optional) Your spending habits: frequent channels, wallets, and categories. Leave it empty — CardRadar auto-learns from each query/update and, after every rewards update, leads with a habit-based summary & recommendations.
 
 3. 在 Notion 建好「信用卡回饋規則表」資料庫——欄位定義見 [`cardradar/SKILL.md`](cardradar/SKILL.md) 的 *DB schema* 一節。
    Create the "credit-card rewards" database in Notion — see the *DB schema* section in [`cardradar/SKILL.md`](cardradar/SKILL.md) for the exact fields.
@@ -80,6 +83,7 @@ The less you spend, the closer it is to a pure rate comparison; the more you spe
 | `/card 新增 <卡名 card>` | 查官方資料、新增回饋列（有疑惑當場釐清後寫入）Look up official terms, add reward rows (clarifying anything unclear first) |
 | `/card 更新 <卡名/通路>` | 重查並更新既有列（有疑惑當場釐清）Re-check and update existing rows (clarifying anything unclear) |
 | `/card 失效 <列>` | 活動結束標已失效 Mark ended promotions as expired |
+| `/card 摘要` · `/card 報告` | 依你記住的消費習慣產出摘要報告與推薦；每次更新回饋資料後也會自動做 Habit-based summary & recommendations; also runs automatically after each rewards update |
 
 ## 檔案結構 · Layout
 
@@ -91,12 +95,14 @@ The less you spend, the closer it is to a pure rate comparison; the more you spe
    ├─ SKILL.md               # 通用邏輯（公開）· generic logic (public)
    ├─ config.example.json    # Notion ID 範本 · ID template
    ├─ profile.example.json   # 個人化資料範本 · profile template
+   ├─ habits.example.json    # 消費習慣記憶範本 · spending-habits template
    ├─ config.local.json      # 你的真實 ID（git-ignored）· your real IDs
-   └─ profile.local.json     # 你的真實持卡資料（git-ignored）· your real card data
+   ├─ profile.local.json     # 你的真實持卡資料（git-ignored）· your real card data
+   └─ habits.local.json      # 你的消費習慣（git-ignored，自動學習＋可手動改）· your habits (auto-learned, editable)
 ```
 
 ## 隱私 · Privacy
 
-這個 repo 是公開的，但**不含任何個人資料**：所有帳號 ID、卡片清單、會員等級與支付偏好都只存在本機的 `*.local.json`，並由 `.gitignore` 擋下。公開的只有通用邏輯與空白範本——任何人都能複製、填入自己的資料來用。
+這個 repo 是公開的，但**不含任何個人資料**：所有帳號 ID、卡片清單、會員等級、支付偏好與消費習慣都只存在本機的 `*.local.json`（含自動學習的 `habits.local.json`），並由 `.gitignore` 擋下。公開的只有通用邏輯與空白範本——任何人都能複製、填入自己的資料來用。
 
-This repo is public but **contains no personal data**: all account IDs, card lists, membership tiers, and wallet preferences live only in local `*.local.json` files, kept out by `.gitignore`. What's public is the generic logic and blank templates — anyone can clone it, fill in their own data, and use it.
+This repo is public but **contains no personal data**: all account IDs, card lists, membership tiers, wallet preferences, and spending habits live only in local `*.local.json` files (including the auto-learned `habits.local.json`), kept out by `.gitignore`. What's public is the generic logic and blank templates — anyone can clone it, fill in their own data, and use it.
